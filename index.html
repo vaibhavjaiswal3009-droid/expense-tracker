@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <header class="heading">
+        <div class="header-top">
+          <h1>Expense Tracker</h1>
+          <button id="theme-btn">🌙</button>
+        </div>
+        <p>Track your income and expenses</p>
+      </header>
+
+      <section class="summary-card" id="summary-card">
+        <div class="summary-item"  id="balance-card">Balance: Rs 0</div>
+        <div class="summary-item" id="income-card">Income: Rs 0</div>
+        <div class="summary-item" id="expense-card">Expense: Rs 0</div>
+      </section>
+
+      <main class="hero-section">
+        <section id="transactionForm">
+          <form id="expenseForm">
+            <div class="form-group">
+              <label for="notes">Note</label>
+              <input
+                type="text"
+                id="notes"
+                placeholder="example: Dinner with friends"
+              />
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Bill">Bill</option>
+                <option value="Salary">Salary</option>
+                <option value="Travel">Travel</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="enter amount"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <div class="radio-group">
+                   <div class="radio-option">
+
+                     <input
+                       type="radio"
+                       value="credit"
+                       id="credit"
+                       name="type"
+                       required
+                     />
+                     <label for="credit">Credit</label>
+                   </div>
+                   <div class="radio-option">
+
+                     <input
+                       type="radio"
+                       value="debit"
+                       id="debit"
+                       name="type"
+                       required
+                     />
+                     <label for="debit">Debit</label>
+                   </div>
+              </div>
+            </div>
+
+             
+              <button type="submit">Add Transaction</button>
+           
+          </form>
+        </section>
+
+        <section id="transactionHistory">
+          <h2>Transaction History</h2>
+          <div id="transactionList" class="transactionList">
+            #handled by js
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
