@@ -136,7 +136,7 @@ function createTransactionCard(transaction) {
   cardAmount.classList.add(transaction.type);
   if(transaction.type==="credit"){
     cardAmount.textContent = `+ ₹ ${transaction.amount}`;
-  }
+  } 
   else{
     cardAmount.textContent = `- ₹ ${transaction.amount}`;
   }
@@ -159,6 +159,13 @@ function createTransactionCard(transaction) {
 
   const cardCategory = document.createElement("span");
   cardCategory.classList.add("cardCategory");
+  if(transaction.type==="credit")
+  {
+    cardCategory.classList.add("credit-category");
+  }
+  else{
+    cardCategory.classList.add("debit-category");
+  }
   cardCategory.textContent = transaction.category;
 
   const cardType = document.createElement("span");
